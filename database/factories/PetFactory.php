@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Owner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,12 @@ class PetFactory extends Factory
      */
     public function definition(): array
     {
+        $dogNames = ['Max', 'Lucy', 'Charlie', 'Cooper', 'Betty', 'Leo', 'Duke', 'Stella', 'Lola', 'Bella'];
+
         return [
-            //
+            'name' => $this->faker->randomElement($dogNames),
+            'dob' => $this->faker->dateTimeBetween($startDate = '-15 years', $endDate = '-1 years', $timezone = null),
+            'owner_id' => $this->faker->randomElement(Owner::pluck('id'))
         ];
     }
 }

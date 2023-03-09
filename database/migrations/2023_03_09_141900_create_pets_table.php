@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('owner_id');
-            $table->timestamp('dob');
+            $table->date('dob');
             $table->timestamps();
 
             // FK
-            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('set null');
         });
     }
 

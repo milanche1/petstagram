@@ -17,7 +17,8 @@ class OwnerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'dob' => $this->faker->dateTimeBetween($startDate = '-55 years', $endDate = '-18 years', $timezone = null),
         ];
     }
 }

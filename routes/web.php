@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PetsController;
 
 /*
@@ -14,4 +15,6 @@ use App\Http\Controllers\PetsController;
 |
 */
 
-Route::get('/', [PetsController::class, 'index']);
+Route::get('/', [MainController::class, 'index']);
+Route::get('/pet/{id}', [PetsController::class, 'view']);
+

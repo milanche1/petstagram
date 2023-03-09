@@ -9,6 +9,7 @@ class Pet extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'owner_id', 'dob'];
+    protected $hidden = ['updated_at'];
 
 
     public function owner() {
