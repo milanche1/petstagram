@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
-    @if ($pets == null)
-        <h4>No pets yet!</h4>
+    @if ($pets->isEmpty())
+        <h4 class="text-center mt-5 mb-5">No pets yet!</h4>
     @else
         <div class="grid">
             @foreach ($pets as $pet)

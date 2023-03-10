@@ -15,7 +15,8 @@ Petstagram is web tailor-made web app for Developion, which uses Laravel and Bac
 Laravel project requires few installation steps in order to work:
 * After you clone repo - usually you start with: composer install
 * After that, you need to create database and insert credentials into .env file
-* When database is created, migrations are next steps, which will create all databases
+* When database is created, migrations are next steps, which will create all databases - php artisan migrate
+* Additionally we need to install our admin panel with command : php artisan backpack:install , after installation will ask for your credentials
 * Optional (but recommended :) ) : run php artisan db:seed in order to create starting data for project  
 
 ## Features

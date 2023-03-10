@@ -16,13 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->unsignedBigInteger('owner_id')->nullable();
-            $table->unsignedBigInteger('avatar_id')->nullable();
             $table->date('dob');
             $table->timestamps();
 
             // FK
             $table->foreign('owner_id')->references('id')->on('owners')->onDelete('set null');
-            $table->foreign('avatar_id')->references('id')->on('images')->onDelete('set null');
         });
     }
 
