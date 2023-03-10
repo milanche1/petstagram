@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <form class="mt-5" method="post" action="/create-pet">
+    <form class="mt-5" method="post" action="{{ route('storePet') }}">
         @csrf
         <div class="form-group pb-3">
             <label for="petName">Name*</label>
@@ -36,7 +36,7 @@
             <label for="birthday">Pet birthday:*</label>
             <input type="date" id="birthday" name="birthday">
          </div>
-        <button type="submit pt-5" class="btn btn-primary">Submit</button>
+        <button type="submit pt-5" class="btn btn-primary">Create</button>
         @if ($errors->any())
             <div class="form-group pt-3">
                 <ul>

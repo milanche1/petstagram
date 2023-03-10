@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OwnerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PetsController;
@@ -18,13 +19,13 @@ use App\Http\Controllers\PetsController;
 Route::get('/', [MainController::class, 'index'])->name('index');
 
 // PET
-Route::get('/pet/{id}', [MainController::class, 'viewPet'])->name('viewPet');
-Route::get('/create-pet', [MainController::class, 'createPet'])->name('createPet');
-Route::post('/create-pet', [MainController::class, 'storePet']);
+Route::get('/pet/{id}', [PetsController::class, 'viewPet'])->name('viewPet');
+Route::get('/create-pet', [PetsController::class, 'createPet'])->name('createPet');
+Route::post('/create-pet', [PetsController::class, 'storePet'])->name('storePet');
 
 // Owner
-Route::get('/create-owner', [MainController::class, 'createOwner'])->name('createOwner');
-Route::post('/create-owner', [MainController::class, 'storeOwner'])->name('storeOwner');
+Route::get('/create-owner', [OwnerController::class, 'createOwner'])->name('createOwner');
+Route::post('/create-owner', [OwnerController::class, 'storeOwner'])->name('storeOwner');
 
 // About
 Route::get('/about', [MainController::class, 'about'])->name('about');
