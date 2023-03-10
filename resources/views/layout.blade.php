@@ -830,7 +830,7 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
-        nav ul li {
+        .nav-item {
             padding-left: 10px;
             padding-right: 10px;
             width: 100px;

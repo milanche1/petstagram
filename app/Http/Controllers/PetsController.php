@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pet;
 use App\Models\Image;
 use App\Models\Owner;
 use Illuminate\Http\Request;
@@ -9,7 +10,15 @@ use Illuminate\Support\Facades\Validator;
 
 class PetsController extends Controller
 {
-    public function createPet()
+    public function viewPet($id): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View {
+        $pet = Pet::whereId($id)->first();
+
+        abort_if(!$pet, 404);
+
+        return view('pet.view', ['pet' => $pet]);
+    }
+
+    public function createPet(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $owners = Owner::all();
 
@@ -47,7 +56,7 @@ class PetsController extends Controller
         }
     }
 
-    private function saveImage($avatar, $petId)
+    private function saveImage($avatar, $petId): mixed
     {
         $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
         $avatar->move(public_path('avatars'), $avatarName);

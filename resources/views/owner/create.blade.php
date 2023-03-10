@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <form class="mt-5" method="post" action="/create-pet">
+    <form class="mt-5" method="post" action="{{ route('createOwner') }}">
         @csrf
         <div class="form-group pb-3">
             <label for="ownerName">Name*</label>
