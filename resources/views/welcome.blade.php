@@ -15,5 +15,9 @@
               </div>
             @endforeach
         </div>
+        <div class="form-group mt-5 mb-5">
+            {!! $pets->links('pagination::bootstrap-4') !!}
+        </div>
+
     @endif
 @endsection

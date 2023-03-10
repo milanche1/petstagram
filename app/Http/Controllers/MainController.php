@@ -12,7 +12,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $allPets = Pet::get();
+        $allPets = Pet::paginate(9);
         return view('welcome', ['pets' => $allPets]);
     }
 
