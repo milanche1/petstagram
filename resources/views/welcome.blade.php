@@ -6,7 +6,9 @@
         <div class="grid">
             @foreach ($pets as $pet)
             <div class="card mt-3 mb-3" style="width: 18rem;">
-                <img class="card-img-top" src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcR3frqA6qXxPHb5gk9vrZQgcHHA78oUVPshn_5s4k1SQ4hUnq7ScWTNp2YOgJYhUuDeLP5hRI_KJXujwiU" alt="Card image cap">
+                @php
+                @endphp
+                <img class="card-img-top" src={{ $pet->image == null ? 'https://media.istockphoto.com/id/889640780/photo/chihuahua-sitting-looking-at-the-camera-5-year-old-isolated-on-white.jpg?s=612x612&w=0&k=20&c=9CfHSY3cvKZ6QJpF0WUVAaZbzOBusNg6j7uwLD0BCJs=' : '/avatars/' . $pet->image->name }} alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ $pet->name }}</h5>
                   <p class="card-text">{{ $pet->description }}</p>

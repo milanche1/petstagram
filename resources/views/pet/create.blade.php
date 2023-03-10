@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <form class="mt-5" method="post" action="{{ route('storePet') }}">
+    <form class="mt-5" method="post" action="{{ route('storePet') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group pb-3">
             <label for="petName">Name*</label>
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group pb-3">
             <label class="form-label" for="uploadPhoto">Upload Photo*</label>
-            <input type="file" name="file" class="form-control" id="uploadPhoto" />
+            <input type="file" name="avatar" class="form-control">
         </div>
         @if ($owners != null)
         <div class="form-group pb-3">

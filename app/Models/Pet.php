@@ -22,4 +22,9 @@ class Pet extends Model
     public function image() {
         return $this->hasOne(Image::class);
     }
+
+
+    public function getImageName() {
+        return $this->image->name;
+    }
 }

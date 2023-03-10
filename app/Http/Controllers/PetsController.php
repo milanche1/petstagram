@@ -33,7 +33,7 @@ class PetsController extends Controller
             'name' => 'required|string|max:50',
             'description' => 'required|string|max:150',
             'owner' => 'required',
-            'file' => 'required|image|mimes:jpeg,png,jpg,svg',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,svg',
             'birthday' => 'required|date'
         ]);
 

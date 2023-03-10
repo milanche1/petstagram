@@ -11,6 +11,13 @@
 
 Petstagram is web tailor-made web app for Developion, which uses Laravel and Backpack Admin solutions.
 
+## Instalation
+Laravel project requires few installation steps in order to work:
+* After you clone repo - usually you start with: composer install
+* After that, you need to create database and insert credentials into .env file
+* When database is created, migrations are next steps, which will create all databases
+* Optional (but recommended :) ) : run php artisan db:seed in order to create starting data for project  
+
 ## Features
 Some of the Laravel features that I used are:
 * Laravel Factories

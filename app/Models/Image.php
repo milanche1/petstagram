@@ -9,6 +9,8 @@ class Image extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['pet_id', 'name'];
+
     public function pet() {
         return $this->belongsTo(Pet::class);
     }

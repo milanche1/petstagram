@@ -8,7 +8,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $allPets = Pet::paginate(9);
+        $allPets = Pet::orderBy('id', 'DESC')->paginate(9);
         return view('welcome', ['pets' => $allPets]);
     }
 
