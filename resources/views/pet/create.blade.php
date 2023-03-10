@@ -22,7 +22,7 @@
                     <option value="{{ $owner->id }}">{{ $owner->name }}</option>
                 @endforeach
             </select>
-            <small>Don't see owner on this list? Add them <a href="/create-owner" target="_blank">here</a></small>
+            <small>Don't see owner on this list? Add them <a href="{{ route('createOwner') }}" target="_blank">here</a></small>
         </div>
         @else
             <div class="form-group pb-3">

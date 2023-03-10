@@ -6,7 +6,7 @@ use App\Models\Owner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class OwnerController extends Controller
+class OwnersController extends Controller
 {
     public function createOwner()
     {
