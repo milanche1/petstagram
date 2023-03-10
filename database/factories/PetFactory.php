@@ -17,7 +17,7 @@ class PetFactory extends Factory
      */
     public function definition(): array
     {
-        $dogNames = ['Max', 'Lucy', 'Charlie', 'Cooper', 'Betty', 'Leo', 'Duke', 'Stella', 'Lola', 'Bella'];
+        $dogNames = ['Max', 'Lucy', 'Charlie', 'Cooper', 'Betty', 'Leo', 'Duke', 'Stella', 'Lola', 'Bella', 'Lilly', 'Sadie', 'Zoue', 'Daisy'];
 
         return [
             'name' => $this->faker->randomElement($dogNames),

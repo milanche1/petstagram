@@ -18,7 +18,13 @@ use App\Http\Controllers\PetsController;
 Route::get('/', [MainController::class, 'index'])->name('index');
 
 // PET
-Route::get('/pet/{id}', [MainController::class, 'viewPet']);
-Route::get('/create-pet', [MainController::class, 'createPet']);
+Route::get('/pet/{id}', [MainController::class, 'viewPet'])->name('viewPet');
+Route::get('/create-pet', [MainController::class, 'createPet'])->name('createPet');
 Route::post('/create-pet', [MainController::class, 'storePet']);
 
+// Owner
+Route::get('/create-owner', [MainController::class, 'createOwner'])->name('createOwner');
+Route::post('/create-owner', [MainController::class, 'storeOwner'])->name('storeOwner');
+
+// About
+Route::get('/about', [MainController::class, 'about'])->name('about');

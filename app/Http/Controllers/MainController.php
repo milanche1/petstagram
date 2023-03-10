@@ -40,9 +40,9 @@ class MainController extends Controller
             'name' => 'required|string|max:50',
             'description' => 'required|string|max:150',
             'owner' => 'required',
-            'avatar' => 'required|image'
+            'file' => 'required|image|mimes:jpeg,png,jpg,svg',
+            'birthday' => 'required|date'
         ]);
-
 
         if ($validator->fails()) {
             return redirect()
@@ -53,8 +53,8 @@ class MainController extends Controller
             $currentPet = Pet::create([
                 'name' => $request->name,
                 'description' => $request->description,
-                'owner_id' => 1,
-                'dob' => '2022-1-1'
+                'owner_id' => $request->owner,
+                'dob' => $request->birthday
             ]);
 
             self::saveImage($request->avatar, $currentPet->id);
@@ -62,6 +62,20 @@ class MainController extends Controller
             return redirect()->to('/');
         }
     }
+
+    public function createOwner() {
+        return 'hello world';
+    }
+
+    public function storeOwner(Request $request) {
+        return 'hello world';
+    }
+
+
+    public function about() {
+        return view('about');
+    }
+
 
     private function saveImage($avatar, $petId)
     {

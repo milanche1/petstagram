@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Pet extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'owner_id', 'dob'];
+    protected $fillable = ['name', 'owner_id', 'dob', 'description'];
     protected $hidden = ['updated_at'];
 
 
