@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pet extends Model
 {
@@ -14,5 +15,9 @@ class Pet extends Model
 
     public function owner() {
         return $this->belongsTo(Owner::class);
+    }
+
+    public function image() {
+        return $this->hasOne(Image::class);
     }
 }

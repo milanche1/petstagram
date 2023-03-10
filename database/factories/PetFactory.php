@@ -22,6 +22,7 @@ class PetFactory extends Factory
         return [
             'name' => $this->faker->randomElement($dogNames),
             'dob' => $this->faker->dateTimeBetween($startDate = '-15 years', $endDate = '-1 years', $timezone = null),
+            'description' => $this->faker->text(150),
             'owner_id' => $this->faker->randomElement(Owner::pluck('id'))
         ];
     }
