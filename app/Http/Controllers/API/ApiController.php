@@ -83,8 +83,6 @@ class ApiController extends Controller
 
             ];
 
-            // return date($response['dob']);
-
             Owner::create($response);
 
         } catch (\GuzzleHttp\Exception\BadResponseException $e) {

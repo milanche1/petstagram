@@ -7,6 +7,24 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Petstagram
+
+Petstagram is web tailor-made web app for Developion, which uses Laravel and Backpack Admin solutions.
+
+## Features
+Some of the Laravel features that I used are:
+* Laravel Factories
+* Migrations
+* One to one
+* Many to one
+* Laravel Backpack for Admin panel
+* Pagination
+* API calls for GET and POST for both Pets and Owners
+
+## API 
+* ApiController is located in App\Http\Controllers\API namespace. 
+* API calls can be located in api.php routing folder.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
