@@ -6,6 +6,7 @@ use App\Models\Pet;
 use App\Models\Owner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ApiController extends Controller
 {
@@ -20,45 +21,18 @@ class ApiController extends Controller
         return response()->json($allPets);
     }
 
-    public function petStore(Request $request)
+    public function pet($id)
     {
-        $payload = json_decode($request->getContent(), true);
+        $pet = Pet::whereId($id)->first();
 
-        try {
 
-            $response = [
-                'name' => $payload['name'],
-            ];
-
-            Pet::create([$response]);
-
-        } catch (\GuzzleHttp\Exception\BadResponseException $e) {
-
-            $errorResJson = $e
-                ->getResponse()
-                ->getBody()
-                ->getContents();
-
-            $errorRes = json_decode(stripslashes($errorResJson), true);
-
-            return response()->json(
-                [
-                    'message' => 'error',
-                    'data' => $errorRes
-                ],
-                $errorRes['response']['code']
-            );
+        if ($pet == null) {
+            return 'no pet with this id!';
         }
 
-        return response()->json(
-            [
-                'status' => '200',
-                'data' => $response,
-                'message' => 'success'
-            ],
-            200
-        );
+        return response()->json($pet);
     }
+
 
     public function owners()
     {
@@ -71,16 +45,36 @@ class ApiController extends Controller
         return response()->json($allOwners);
     }
 
+    public function owner($id)
+    {
+        $owner = Owner::whereId($id)->first();
+
+
+        if ($owner == null) {
+            return 'no owner with this id!';
+        }
+
+        return response()->json($owner);
+    }
+
     public function ownerStore(Request $request)
     {
         $payload = json_decode($request->getContent(), true);
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3|max:50',
+            'dob' => 'required|date_format:Y-m-d'
+        ]);
+
+        if ($validator->fails()) {
+            return $validator->messages();
+        }
 
         try {
 
             $response = [
                 'name' => $payload['name'],
                 'dob' => $payload['dob'],
-
             ];
 
             Owner::create($response);

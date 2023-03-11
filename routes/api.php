@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/pets', [ApiController::class, 'pets']);
-Route::post('/pet', [ApiController::class, 'petStore']);
+Route::get('/pet/{id}', [ApiController::class, 'pet']);
 Route::get('/owners', [ApiController::class, 'owners']);
+Route::get('/owner/{id}', [ApiController::class, 'owner']);
 Route::post('/owner', [ApiController::class, 'ownerStore']);
+
