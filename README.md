@@ -9,7 +9,7 @@
 
 # Petstagram
 
-Petstagram is web tailor-made web app for Developion, which uses Laravel and Backpack Admin solutions.
+Petstagram is web tailor-made web app, which uses Laravel and Backpack Admin solutions.
 
 ## Instalation
 Laravel project requires few installation steps in order to work:
